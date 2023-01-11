@@ -1,25 +1,36 @@
 package Lesson7;
 
 public class Triangle extends Figure {
-    int a;
-    int b;
-    int c;
-    int h;
+    private int a;
+    private int b;
+    private  int c;
 
-    public Triangle(int a, int b, int c, int h) {
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    public void setC(int c) {
+        this.c = c;
+    }
+
+    public Triangle(int a, int b, int c) {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.h = h;
     }
 
     @Override
-    public void square() {
-        square = 0.5 * c * h;
+    public double square() {
+        double p = perimeter();
+        return Math.sqrt((p - a) * (p - b) * (p - c) * p);
     }
 
     @Override
-    public void perimetr() {
-        perimetr = a + b + c;
+    public double perimeter() {
+        return a + b + c;
     }
 }
